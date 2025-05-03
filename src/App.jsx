@@ -3,10 +3,10 @@ import React from 'react';
 import { useState } from 'react';
 const App = () => {
 
-  const [num1,setNum1]=useState(0)
-  const [num2,setNum2]=useState(0)
-  const [num3,setNum3]=useState(0)
-  const [resultado, setResultado]=useState(0)
+  const [num1, setNum1] = useState(0)
+  const [num2, setNum2] = useState(0)
+  const [num3, setNum3] = useState(0)
+  const [resultado, setResultado] = useState(0)
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -21,17 +21,16 @@ const App = () => {
 
 
 
-    const clacularModulo = () => {
-    
-      if (isNaN(num1) || isNaN(num2) || isNaN(num3)) {
-        setResultado("Por favor, ingresa números válidos.");
-        return;
-      }
-  
-      // Calcular el módulo usando la fórmula
-      const modulo = Math.sqrt(Math.pow(num1, 2) + Math.pow(num2, 2) + Math.pow(num3, 2));
-      setResultado(modulo.toFixed(2));  // Mostramos el resultado con dos decimales
-    };
+  const clacularModulo = () => {
+
+    if (isNaN(num1) || isNaN(num2) || isNaN(num3)) {
+      setResultado("Por favor, ingresa números válidos.");
+      return;
+    }
+
+    const modulo = Math.sqrt(Math.pow(num1, 2) + Math.pow(num2, 2) + Math.pow(num3, 2));
+    setResultado(modulo.toFixed(2));
+  };
   return (
     <>
       <div className='introduction'>
@@ -71,39 +70,44 @@ const App = () => {
             En otras palabras, si tienes un vector con componentes x, y y z (si es tridimensional), el módulo será √(x² + y² + z²).
           </p>
         </div>
-        <div className='solveModul'> 
-          <input 
+        <div className='solveModul'>
+          <input
             type='number'
             name='num1'
+            className='num1Modulo'
             value={num1}
             placeholder='Primer numero o X'
             onChange={handleChange}
           />
-          <input 
+          <input
             type='number'
             name='num2'
+            className='num2Modulo'
             value={num2}
             placeholder='Segundo numero o Y'
             onChange={handleChange}
-          
+
           />
-          <input 
+          <input
             type='number'
             name='num3'
+            className='num3Modulo'
             value={num3}
             placeholder='Tercer numero o Z'
             onChange={handleChange}
           />
 
+          <input
+            type='number'
+            value={resultado}
+            readOnly
+            placeholder='Resultado'
+
+          />
+
           <button onClick={clacularModulo}>Calcular Modulo</button>
 
-          <input
-          type='number'
-          value={resultado}
-          readOnly
-          placeholder='Resultado'
-          
-          />
+
         </div>
       </div>
 

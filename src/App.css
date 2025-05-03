@@ -29,3 +29,18 @@ body{
     margin-top: 20px;
     font-size: 24px;
 }
+
+
+.solveModul{
+    display: flex;
+}
+
+.num1Modulo{
+    padding: 20px;
+    margin-right: 15px;
+}
+
+.num2Modulo{
+    padding: 20px;
+    margin-right: 15px;
+}
