@@ -96,16 +96,22 @@ const App = () => {
             placeholder='Tercer numero o Z'
             onChange={handleChange}
           />
-
+          <h1 className='igualModulo'>=</h1>
           <input
             type='number'
+            className='resultadoModulo'
             value={resultado}
             readOnly
             placeholder='Resultado'
 
           />
 
-          <button onClick={clacularModulo}>Calcular Modulo</button>
+          <div className='divBotonModulo'>
+            <button onClick={clacularModulo}
+              className='botonModulo'
+            >Calcular Modulo</button>
+          </div>
+
 
 
         </div>
