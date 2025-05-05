@@ -69,7 +69,7 @@ const App = () => {
           <p>Para sacar el módulo de un vector, necesitas calcular la raíz cuadrada de la suma de los cuadrados de sus componentes.
             En otras palabras, si tienes un vector con componentes x, y y z (si es tridimensional), el módulo será √(x² + y² + z²).
           </p>
-        </div>
+        
         <div className='solveModul'>
           <input
             type='number'
@@ -111,7 +111,7 @@ const App = () => {
               className='botonModulo'
             >Calcular Modulo</button>
           </div>
-
+          </div>
 
 
         </div>

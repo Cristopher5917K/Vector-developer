@@ -92,6 +92,8 @@ body{
     margin-bottom: 50px;
 }
 
-.divBotonModulo{
-    display: flex;
+.modulo{
+    margin-top: 20px;
+    padding: 10px;
+    background-color: aqua;
 }
