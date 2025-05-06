@@ -69,52 +69,61 @@ const App = () => {
           <p>Para sacar el módulo de un vector, necesitas calcular la raíz cuadrada de la suma de los cuadrados de sus componentes.
             En otras palabras, si tienes un vector con componentes x, y y z (si es tridimensional), el módulo será √(x² + y² + z²).
           </p>
-        
-        <div className='solveModul'>
-          <input
-            type='number'
-            name='num1'
-            className='num1Modulo'
-            value={num1}
-            placeholder='Primer numero o X'
-            onChange={handleChange}
-          />
-          <input
-            type='number'
-            name='num2'
-            className='num2Modulo'
-            value={num2}
-            placeholder='Segundo numero o Y'
-            onChange={handleChange}
 
-          />
-          <input
-            type='number'
-            name='num3'
-            className='num3Modulo'
-            value={num3}
-            placeholder='Tercer numero o Z'
-            onChange={handleChange}
-          />
-          <h1 className='igualModulo'>=</h1>
-          <input
-            type='number'
-            className='resultadoModulo'
-            value={resultado}
-            readOnly
-            placeholder='Resultado'
+          <div className='solveModul'>
+            <input
+              type='number'
+              name='num1'
+              className='num1Modulo'
+              value={num1}
+              placeholder='Primer numero o X'
+              onChange={handleChange}
+            />
+            <input
+              type='number'
+              name='num2'
+              className='num2Modulo'
+              value={num2}
+              placeholder='Segundo numero o Y'
+              onChange={handleChange}
 
-          />
+            />
+            <input
+              type='number'
+              name='num3'
+              className='num3Modulo'
+              value={num3}
+              placeholder='Tercer numero o Z'
+              onChange={handleChange}
+            />
+            <h1 className='igualModulo'>=</h1>
+            <input
+              type='number'
+              className='resultadoModulo'
+              value={resultado}
+              readOnly
+              placeholder='Resultado'
 
-          
+            />
+
+
           </div>
           <div className='divBotonModulo'>
             <button onClick={clacularModulo}
               className='botonModulo'
             >Calcular Modulo</button>
           </div>
+        </div>
 
-
+        <div className='unitario'>
+          <h1><strong>Vector unitario</strong></h1>
+          <p>
+            Un vector unitario (u) es un vector de módulo la unidad y cuya dirección, sentido y punto
+            de aplicación, coinciden con el vector v, de tal manera que la relación entre ambos es v =
+            v · u = |v| . u.
+            Para hallar un vector unitario u, en la dirección y sentido de otro vector v, basta dividir el
+            vector por su módulo.
+          </p>
         </div>
       </div>
 
