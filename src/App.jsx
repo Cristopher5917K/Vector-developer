@@ -6,12 +6,14 @@ const App = () => {
   const [num1, setNum1] = useState(0)
   const [num2, setNum2] = useState(0)
   const [num3, setNum3] = useState(0)
+  const [uniNum1, setUniNum1] = useState(0)
+  const [uniNum2, setUniNum2] = useState(0)
+  const [resultadoUnitario, setResultadoUnitario] = useState({x:0, y:0})
   const [resultado, setResultado] = useState(0)
 
   const handleChange = (event) => {
     const { name, value } = event.target;
 
-    // Convertir el valor de cada campo a número
     const numberValue = value === "" ? "" : parseFloat(value);
 
     if (name === 'num1') setNum1(numberValue);
@@ -31,6 +33,37 @@ const App = () => {
     const modulo = Math.sqrt(Math.pow(num1, 2) + Math.pow(num2, 2) + Math.pow(num3, 2));
     setResultado(modulo.toFixed(2));
   };
+
+
+  const handleChangeUnitario = (event) => {
+    const { name, value } = event.target
+    const numberUniValue = value === "" ? "" : parseFloat(value)
+
+
+    if (name === 'uniNum1') setUniNum1(numberUniValue)
+    if (name === 'uniNum2') setUniNum2(numberUniValue)
+  }
+
+
+  const calcularUnitario = () => {
+    if (isNaN(uniNum1) || isNaN(uniNum2)) {
+      setResultadoUnitario("Por favor, ingresa números válidos.");
+      return;
+    }
+  
+    const modulo = Math.sqrt(Math.pow(uniNum1, 2) + Math.pow(uniNum2, 2));
+  
+    if (modulo === 0) {
+      setResultadoUnitario("El vector no puede ser (0, 0).");
+      return;
+    }
+  
+    const unitarioX = (uniNum1 / modulo).toFixed(2);
+    const unitarioY = (uniNum2 / modulo).toFixed(2);
+  
+    setUnitarioResult({ x: unitarioX, y: unitarioY });
+  };
+  
   return (
     <>
       <div className='introduction'>
@@ -124,6 +157,22 @@ const App = () => {
             Para hallar un vector unitario u, en la dirección y sentido de otro vector v, basta dividir el
             vector por su módulo.
           </p>
+          <div className='unitariSolve'>
+
+            <input
+              type='number'
+              name='uniNum1'
+              value={uniNum1}
+              placeholder='Primer numero o X'
+            />
+
+            <input
+              type='number'
+              name='uniNum2'
+              value={uniNum2}
+              placeholder='Segundo numero o Y'
+            />
+          </div>
         </div>
       </div>
 
