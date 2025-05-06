@@ -61,7 +61,7 @@ const App = () => {
     const unitarioX = (uniNum1 / modulo).toFixed(2);
     const unitarioY = (uniNum2 / modulo).toFixed(2);
   
-    setUnitarioResult({ x: unitarioX, y: unitarioY });
+    setResultadoUnitario({ x: unitarioX, y: unitarioY });
   };
   
   return (
@@ -164,6 +164,7 @@ const App = () => {
               name='uniNum1'
               value={uniNum1}
               placeholder='Primer numero o X'
+              onChange={handleChangeUnitario}
             />
 
             <input
@@ -171,8 +172,24 @@ const App = () => {
               name='uniNum2'
               value={uniNum2}
               placeholder='Segundo numero o Y'
+              onChange={handleChangeUnitario}
+            />
+
+            <input
+            type='text'
+            name='resultUni'
+            value={`X: ${resultadoUnitario.x} , Y: ${resultadoUnitario.y}`}
+            readOnly
+            placeholder='Resultado Unitario'
             />
           </div>
+
+          <div className='divBotonUnitario'>
+            <button onClick={calcularUnitario}
+              className='botonModulo'
+            >Calcular Modulo</button>
+          </div>
+
         </div>
       </div>
 
