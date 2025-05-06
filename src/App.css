@@ -95,5 +95,10 @@ body{
 .modulo{
     margin-top: 20px;
     padding: 10px;
-    background-color: aqua;
+    background-color: aliceblue;
+}
+
+.divBotonModulo{
+    display: flex;
+    padding: 30pxs;
 }

@@ -106,11 +106,12 @@ const App = () => {
 
           />
 
+          
+          </div>
           <div className='divBotonModulo'>
             <button onClick={clacularModulo}
               className='botonModulo'
             >Calcular Modulo</button>
-          </div>
           </div>
 
 
