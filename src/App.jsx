@@ -162,6 +162,7 @@ const App = () => {
             <input
               type='number'
               name='uniNum1'
+              className='uniNum1'
               value={uniNum1}
               placeholder='Primer numero o X'
               onChange={handleChangeUnitario}
@@ -170,14 +171,16 @@ const App = () => {
             <input
               type='number'
               name='uniNum2'
+              className='uniNum2'
               value={uniNum2}
               placeholder='Segundo numero o Y'
               onChange={handleChangeUnitario}
             />
-
+            <h1 className='igualUnitario'>=</h1>
             <input
             type='text'
             name='resultUni'
+            className='resultUni'
             value={`X: ${resultadoUnitario.x} , Y: ${resultadoUnitario.y}`}
             readOnly
             placeholder='Resultado Unitario'
@@ -187,7 +190,7 @@ const App = () => {
           <div className='divBotonUnitario'>
             <button onClick={calcularUnitario}
               className='botonModulo'
-            >Calcular Modulo</button>
+            >Calcular Unitario</button>
           </div>
 
         </div>
