@@ -189,7 +189,7 @@ const App = () => {
 
           <div className='divBotonUnitario'>
             <button onClick={calcularUnitario}
-              className='botonModulo'
+              className='botoUnitario'
             >Calcular Unitario</button>
           </div>
 
