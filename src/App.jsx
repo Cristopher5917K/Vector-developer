@@ -8,7 +8,11 @@ const App = () => {
   const [num3, setNum3] = useState(0)
   const [uniNum1, setUniNum1] = useState(0)
   const [uniNum2, setUniNum2] = useState(0)
-  const [resultadoUnitario, setResultadoUnitario] = useState({x:0, y:0})
+  const [uni3DX, setuni3DX] = useState(0)
+  const [uni3DY, setuni3DY] = useState(0)
+  const [uni3DZ, setuni3DZ] = useState(0)
+  const [resultadoUnitario, setResultadoUnitario] = useState({ x: 0, y: 0 })
+  const [resultadoUnitario3D, setResultadoUnitario3D] = useState({ x: 0, y: 0 })
   const [resultado, setResultado] = useState(0)
 
   const handleChange = (event) => {
@@ -50,20 +54,33 @@ const App = () => {
       setResultadoUnitario("Por favor, ingresa números válidos.");
       return;
     }
-  
+
     const modulo = Math.sqrt(Math.pow(uniNum1, 2) + Math.pow(uniNum2, 2));
-  
+
     if (modulo === 0) {
       setResultadoUnitario("El vector no puede ser (0, 0).");
       return;
     }
-  
+
     const unitarioX = (uniNum1 / modulo).toFixed(2);
     const unitarioY = (uniNum2 / modulo).toFixed(2);
-  
+
     setResultadoUnitario({ x: unitarioX, y: unitarioY });
   };
-  
+
+  const handleChangeUnitario3D = (event) => {
+    const { name, value } = event.target
+
+    // Esta linea se encarga de hacer una comparacion
+    // Con el value ==="" reviso si es una cadena vacia
+    // Con el ?"" dice que si es una cadena vacia me devuelve la cadena vacia
+    // :parseFloat(value) se encarga de convertir en numero
+    const numberUni3DVslue = value === "" ? "" : parseFloat(value)
+
+    if (name === uni3DX) setuni3DX(numberUni3DVslue)
+    if (name === uni3DY) setuni3DY(numberUni3DVslue)
+    if (name === uni3DZ) setuni3DZ(numberUni3DVslue)
+  }
   return (
     <>
       <div className='introduction'>
@@ -178,12 +195,12 @@ const App = () => {
             />
             <h1 className='igualUnitario'>=</h1>
             <input
-            type='text'
-            name='resultUni'
-            className='resultUni'
-            value={`X: ${resultadoUnitario.x} , Y: ${resultadoUnitario.y}`}
-            readOnly
-            placeholder='Resultado Unitario'
+              type='text'
+              name='resultUni'
+              className='resultUni'
+              value={`X: ${resultadoUnitario.x} , Y: ${resultadoUnitario.y}`}
+              readOnly
+              placeholder='Resultado Unitario'
             />
           </div>
 
@@ -196,7 +213,28 @@ const App = () => {
         </div>
 
         <div className='unitario3D'>
-            <h1>Unitario 3D (x,y,z)</h1>
+          <h1>Unitario 3D (x,y,z)</h1>
+
+
+          <input
+            type='number'
+            placeholder='X'
+            name='uni3DX'
+            value={uni3DX}
+          />
+          <input
+            type='number'
+            placeholder='Y'
+            name='uni3DY'
+            value={uni3DY}
+          />
+          <input
+            type='number'
+            placeholder='Z'
+            name='uni3DZ'
+            value={uni3DZ}
+          />
+
         </div>
       </div>
 
