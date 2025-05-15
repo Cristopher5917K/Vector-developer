@@ -221,18 +221,21 @@ const App = () => {
             placeholder='X'
             name='uni3DX'
             value={uni3DX}
+            onChange={handleChangeUnitario3D}
           />
           <input
             type='number'
             placeholder='Y'
             name='uni3DY'
             value={uni3DY}
+            onChange={handleChangeUnitario3D}
           />
           <input
             type='number'
             placeholder='Z'
             name='uni3DZ'
             value={uni3DZ}
+            onChange={handleChangeUnitario3D}
           />
 
         </div>
