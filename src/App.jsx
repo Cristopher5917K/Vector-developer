@@ -81,6 +81,22 @@ const App = () => {
     if (name === uni3DY) setuni3DY(numberUni3DVslue)
     if (name === uni3DZ) setuni3DZ(numberUni3DVslue)
   }
+
+  const calCularUnitario3D=()=>{
+    if(isNaN(uni3DX)|| isNaN(uni3DY)|| isNaN(uni3DZ)){
+      setResultadoUnitario3D("Por favor, ingresa números válidos.")
+      return
+    }
+
+    const modulo3D=Math.sqrt(Math.pow(uni3DX,2)+Math.pow(uni3DY,2)+Math.pow(uni3DZ,2))
+
+    if(modulo3D===0){
+        setResultadoUnitario3D("El vector no puede ser (0, 0).");
+      return;
+    }
+
+    const unitario3DX=(uni3DX/modulo3D).toFixed(2)
+  }
   return (
     <>
       <div className='introduction'>
